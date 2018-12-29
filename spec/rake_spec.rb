@@ -9,10 +9,14 @@ describe "Rakefile" do
 
   describe 'namespace :greeting' do
     describe 'greeting:hello' do
+
       it "should print out 'hello from Rake!'" do
         expect($stdout).to receive(:puts).with("hello from Rake!")
         Rake::Task["greeting:hello"].invoke
       end
+
+
+
     end
 
     describe 'greeting:hola' do
@@ -23,11 +27,7 @@ describe "Rakefile" do
     end
   end
 
-  describe 'console' do
-    it 'exists' do
-      expect(Rake::Task['console']).to be_truthy, "Make sure you have a 'console' rake task"
-    end
-  end
+
 
   describe 'namespace :db' do
     describe 'db:migrate' do
